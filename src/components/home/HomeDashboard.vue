@@ -78,7 +78,7 @@ function percentToHSL(percent) {
       <el-table-column
         prop="rank"
         label="Violations"
-        class="home-dashboard__table-violations"
+        class-name="home-dashboard__table-violations"
       >
         <template #default="{ row }">
           <el-tag
@@ -144,8 +144,11 @@ function percentToHSL(percent) {
     }
 
     .home-dashboard__table-violations {
-      display: flex;
-      gap: 0.2rem;
+      .cell {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.4rem;
+      }
     }
 
     .home-dashboard__table-violation {
@@ -161,12 +164,6 @@ function percentToHSL(percent) {
         display: flex;
         align-items: center;
         gap: 0.2rem;
-      }
-
-      &:not(:first-child) {
-        @media (min-width: 1024px) {
-          margin-left: 0.4rem;
-        }
       }
     }
   }
