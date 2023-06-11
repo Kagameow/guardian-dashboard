@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import IconGuardian from "@/components/icons/IconGuardian.vue";
+import IconGuardian from "@/assets/icons/icon-guardian.svg";
 
 export default {
   name: "AppHeader",
@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .guardian-header {
   height: 96px;
 }
