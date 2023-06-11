@@ -84,7 +84,6 @@ function percentToHSL(percent) {
           <el-tag
             v-for="(violation, index) in row.violations"
             :key="index + violation"
-            type="danger"
             class="home-dashboard__table-violation"
           >
             <component :is="VIOLATIONS_ICONS[violation]" />
@@ -148,6 +147,11 @@ function percentToHSL(percent) {
         display: flex;
         flex-flow: row wrap;
         gap: 0.4rem;
+        .el-tag {
+          --el-tag-text-color: var(--color-text-danger);
+          --el-tag-bg-color: var(--color-background-danger);
+          border: 0;
+        }
       }
     }
 
