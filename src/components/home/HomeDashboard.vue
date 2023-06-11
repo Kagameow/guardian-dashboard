@@ -6,6 +6,11 @@ import useCopyToClipboard from "@/use/useCopyToClipboard";
 
 const { copyToClipboard } = useCopyToClipboard()
 
+function percentToHSL(percent) {
+  const hue = (percent / 100) * 120;
+  return { 'color': `hsl(${hue}, 100%, 30%)` }
+}
+
 </script>
 
 <template>
@@ -28,7 +33,9 @@ const { copyToClipboard } = useCopyToClipboard()
         sortable
       >
         <template #default="{ row }">
-          {{ row.score }}%
+          <span :style="percentToHSL(row.score)">
+            {{ row.score }}%
+          </span>
         </template>
       </el-table-column>
       <el-table-column
@@ -160,8 +167,6 @@ const { copyToClipboard } = useCopyToClipboard()
         }
       }
     }
-
-
   }
 }
 </style>

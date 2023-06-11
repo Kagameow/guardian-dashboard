@@ -113,7 +113,7 @@ export const UNTRUSTED_NODES_MOCK = [
     },
     {
         "rank": 9553,
-        "score": 4,
+        "score": 34,
         "address": "7faca78dsdabcd1234b213e4",
         "name": "staked.poolv1.near",
         "blocks_created": 15,
@@ -121,7 +121,7 @@ export const UNTRUSTED_NODES_MOCK = [
     },
     {
         "rank": 9552,
-        "score": 4,
+        "score": 95,
         "address": "0x000000abcd12343d7705Fa",
         "name": "figment.poolv1.near",
         "blocks_created": 4,
@@ -129,7 +129,7 @@ export const UNTRUSTED_NODES_MOCK = [
     },
     {
         "rank": 9551,
-        "score": 2,
+        "score": 22,
         "address": "01200000abcd12343d770dFf",
         "name": "staked.poolv1.near",
         "blocks_created": 4,
@@ -137,7 +137,7 @@ export const UNTRUSTED_NODES_MOCK = [
     },
     {
         "rank": 9550,
-        "score": 4,
+        "score": 47,
         "address": "7faca78dsdabcd1234b213e4",
         "name": "figment.poolv1.near",
         "blocks_created": 2,
@@ -145,7 +145,7 @@ export const UNTRUSTED_NODES_MOCK = [
     },
     {
         "rank": 9548,
-        "score": 4,
+        "score": 34,
         "address": "0x000000abcd12343d7705Fa",
         "name": "staked.poolv1.near",
         "blocks_created": 5,
@@ -153,7 +153,7 @@ export const UNTRUSTED_NODES_MOCK = [
     },
     {
         "rank": 9548,
-        "score": 4,
+        "score": 54,
         "address": "01200000abcd12343d770dFf",
         "name": "figment.poolv1.near",
         "blocks_created": 15,
