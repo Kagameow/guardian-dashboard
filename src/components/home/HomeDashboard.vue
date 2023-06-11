@@ -23,7 +23,7 @@ function percentToHSL(percent) {
       <el-table-column
         prop="rank"
         label="Rank"
-        width="80"
+        width="90"
         sortable
       />
       <el-table-column
@@ -116,7 +116,7 @@ function percentToHSL(percent) {
 
     thead {
       .cell {
-        font-weight: bold;
+        font-weight: 600;
       }
     }
 
@@ -149,6 +149,8 @@ function percentToHSL(percent) {
     }
 
     .home-dashboard__table-violation {
+      padding: 0.3rem 0.3rem;
+      font-weight: 500;
 
       .home-dashboard__table-violation-text{
         display: inline-block;
