@@ -6,9 +6,20 @@ export const VIOLATIONS_NAMES = {
     Injection: 'injections',
     Reordering: 'reordering',
 }
-
-export const VIOLATIONS_ICONS = {
-    [VIOLATIONS_NAMES.Censoring]: IconForbidden,
-    [VIOLATIONS_NAMES.Injection]: IconInjection,
-    [VIOLATIONS_NAMES.Reordering] : IconReordering,
-}
+export const VIOLATIONS_MAP = new Map([
+    [VIOLATIONS_NAMES.Censoring, {
+        title: VIOLATIONS_NAMES.Censoring,
+        description: 'Blockchain node is censoring transactions.',
+        icon: IconForbidden,
+    }],
+    [VIOLATIONS_NAMES.Injection, {
+        title: VIOLATIONS_NAMES.Injection,
+        description: 'Blockchain node is injecting transactions.',
+        icon: IconInjection,
+    }],
+    [VIOLATIONS_NAMES.Reordering, {
+        title: VIOLATIONS_NAMES.Reordering,
+        description: 'Blockchain node is reordering transactions.',
+        icon: IconReordering,
+    }],
+])

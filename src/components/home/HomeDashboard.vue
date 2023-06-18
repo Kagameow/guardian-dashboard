@@ -1,8 +1,10 @@
 <script setup>
 import IconCopy from "@/assets/icons/icon-copy.svg";
 import { UNTRUSTED_NODES_MOCK} from "@/utils/mocks/home-dasboard-example";
-import { VIOLATIONS_ICONS } from "@/utils/violations-map";
+import { VIOLATIONS_MAP } from "@/utils/violations-map";
 import useCopyToClipboard from "@/use/useCopyToClipboard";
+
+const violationsMap = Object.fromEntries(VIOLATIONS_MAP);
 
 const { copyToClipboard } = useCopyToClipboard()
 
@@ -87,10 +89,19 @@ function percentToHSL(percent) {
             :key="index + violation"
             class="home-dashboard__table-violation"
           >
-            <component :is="VIOLATIONS_ICONS[violation]" />
-            <div class="home-dashboard__table-violation-text">
-              {{ violation }}
-            </div>
+            <el-tooltip
+              effect="dark"
+              :content="violationsMap[violation].description"
+              placement="top"
+              class="home-dashboard__table-violation-tooltip"
+            >
+              <div>
+                <component :is="violationsMap[violation].icon" />
+                <div class="home-dashboard__table-violation-text">
+                  {{ violation }}
+                </div>
+              </div>
+            </el-tooltip>
           </el-tag>
         </template>
       </el-table-column>
@@ -153,18 +164,25 @@ function percentToHSL(percent) {
           --el-tag-bg-color: var(--color-background-danger);
           border: 0;
         }
+
+        & > .el-tag__content {
+          display: flex;
+          align-items: center;
+          gap: 0.2rem;
+        }
       }
     }
 
     .home-dashboard__table-violation {
       padding: 0.3rem 0.3rem;
       font-weight: 500;
+      cursor: help;
 
       .home-dashboard__table-violation-text{
         display: none;
       }
 
-      @media (min-width: 1280px) {
+      @media (min-width: 1050px) {
         .home-dashboard__table-violation-text{
           display: inline-block;
           height: 100%;
@@ -172,9 +190,11 @@ function percentToHSL(percent) {
       }
 
       & > .el-tag__content {
-        display: flex;
-        align-items: center;
-        gap: 0.2rem;
+        & > .el-tooltip__trigger {
+          display: flex;
+          align-items: center;
+          gap: 0.2rem;
+        }
       }
     }
   }
