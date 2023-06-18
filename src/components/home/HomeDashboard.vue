@@ -27,9 +27,9 @@ function percentToHSL(percent) {
         sortable
       />
       <el-table-column
-        label="Trust score"
+        label="Trust"
         prop="score"
-        width="120"
+        width="90"
         sortable
       >
         <template #default="{ row }">
@@ -67,8 +67,8 @@ function percentToHSL(percent) {
       </el-table-column>
       <el-table-column
         prop="blocks_created"
-        label="Blocks created"
-        width="150"
+        label="Blocks"
+        width="95"
         sortable
       >
         <template #default="{ row }">
@@ -79,6 +79,7 @@ function percentToHSL(percent) {
         prop="rank"
         label="Violations"
         class-name="home-dashboard__table-violations"
+        min-width="115"
       >
         <template #default="{ row }">
           <el-tag
@@ -160,8 +161,14 @@ function percentToHSL(percent) {
       font-weight: 500;
 
       .home-dashboard__table-violation-text{
-        display: inline-block;
-        height: 100%;
+        display: none;
+      }
+
+      @media (min-width: 1280px) {
+        .home-dashboard__table-violation-text{
+          display: inline-block;
+          height: 100%;
+        }
       }
 
       & > .el-tag__content {
