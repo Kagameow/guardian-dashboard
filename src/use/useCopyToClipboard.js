@@ -14,7 +14,8 @@ export function useCopyToClipboard() {
         title: 'Copy failed!',
         duration: 0,
         position: 'top-right',
-        zIndex: 100000
+        zIndex: 100000,
+        message: err,
       })
     }
   }
