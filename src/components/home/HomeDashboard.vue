@@ -164,12 +164,6 @@ function percentToHSL(percent) {
           --el-tag-bg-color: var(--color-background-danger);
           border: 0;
         }
-
-        & > .el-tag__content {
-          display: flex;
-          align-items: center;
-          gap: 0.2rem;
-        }
       }
     }
 
